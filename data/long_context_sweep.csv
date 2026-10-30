@@ -1,0 +1,26 @@
+model,config,context_k,kv_type,codes_found_of_3,prefill_tok_s,decode_tok_s,run_minutes,peak_vram_gb,result,note
+Gemma 4 12B QAT,"layer, MTP draft 8",128,f16,3,108.1,13.6,18.3,6.2,Passed,
+Gemma 4 12B QAT,"layer, MTP draft 8",192,f16,3,77.6,7.0,38.1,7.2,Passed,
+Gemma 4 12B QAT,"layer, MTP draft 8",256,f16,3,60.3,5.7,65.5,7.5,Passed,
+Gemma 4 12B QAT,"layer, MTP draft 8",128,q8_0,3,105.8,12.5,18.7,6.1,Passed,
+Gemma 4 12B QAT,"layer, MTP draft 8",192,q8_0,3,78.5,7.2,37.7,7.1,Passed,
+Gemma 4 12B QAT,layer,128,f16,3,138.2,12.2,14.3,5.5,Passed,
+Gemma 4 12B QAT,layer,192,f16,3,100.7,10.1,29.2,6.3,Passed,
+Gemma 4 12B QAT,layer,128,q8_0,3,137.8,9.6,14.3,5.1,Passed,
+Gemma 4 12B QAT,layer,192,q8_0,3,100.1,7.6,29.4,5.8,Passed,
+Qwen3.5 9B,tensor,128,f16,3,341.6,28.8,5.8,4.9,Passed,
+Qwen3.5 9B,tensor,192,f16,3,262.9,25.3,11.2,6.0,Passed,
+Qwen3.5 9B,tensor,128,q8_0,3,337.7,23.7,5.8,4.4,Passed,
+Qwen3.5 9B,tensor,192,q8_0,3,260.8,19.1,11.3,5.3,Passed,
+Qwen3.5 9B,"tensor, MTP, ub256",128,f16,3,298.8,46.5,6.6,5.3,Passed,
+Qwen3.5 9B,"tensor, MTP, ub256",192,f16,3,226.8,39.6,13.1,6.5,Passed,
+Qwen3.5 9B,"tensor, MTP, ub256",128,q8_0,3,291.8,37.9,6.8,4.8,Passed,
+Qwen3.5 9B,"tensor, MTP, ub256",192,q8_0,3,223.4,30.6,13.3,5.8,Passed,
+Gemma 4 E4B QAT,"1 GPU, MTP, ub1024",128,f16,3,170.0,35.9,11.6,5.7,Passed,
+Gemma 4 E4B QAT,"1 GPU, MTP, ub1024",192,f16,,,,,6.9,Failed,"Model trained for 128K: server capped context, 176K-token prompt rejected (HTTP 400)"
+Gemma 4 E4B QAT,"1 GPU, MTP, ub1024",128,q8_0,3,164.9,24.6,12.0,5.7,Passed,
+Gemma 4 E4B QAT,"1 GPU, MTP, ub1024",192,q8_0,,,,,6.8,Failed,"Model trained for 128K: server capped context, 176K-token prompt rejected (HTTP 400)"
+Gemma 4 E4B QAT,tensor,128,f16,3,291.4,31.8,6.8,3.1,Passed,
+Gemma 4 E4B QAT,tensor,192,f16,,,,,3.5,Failed,"Model trained for 128K: server capped context, 176K-token prompt rejected (HTTP 400)"
+Gemma 4 E4B QAT,tensor,128,q8_0,3,285.8,19.7,6.9,3.1,Passed,
+Gemma 4 E4B QAT,tensor,192,q8_0,,,,,3.5,Failed,"Model trained for 128K: server capped context, 176K-token prompt rejected (HTTP 400)"

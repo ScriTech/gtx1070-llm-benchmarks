@@ -1,0 +1,13 @@
+model,setup,k_cache,v_cache,codes_found_of_3,decode_tok_s,prefill_tok_s,peak_vram_gb,result,note
+Qwen3.5 27B,"tensor, ub256",q4_0,q4_0,3,18.1,189.7,7.7,Fits,
+Qwen3.5 27B,"tensor, ub256",iq4_nl,iq4_nl,,,,,No fit,Out of memory at 65K context
+Qwen3.5 27B,"tensor, ub256",q5_0,q4_0,3,17.9,181.3,7.8,Fits,
+Qwen3.5 27B,"tensor, ub256",q8_0,q4_0,,,,,No fit,Out of memory at 65K context
+Qwen3.5 27B,"tensor, ub256",q5_0,q5_0,3,17.8,181.1,7.8,Fits,
+Qwen3.6 35B-A3B,"layer, -ncmoe 24",q8_0,q8_0,3,13.2,255.7,7.6,Fits,
+Qwen3.6 35B-A3B,"layer, -ncmoe 24",f16,f16,3,13.2,255.2,7.8,Fits,
+Qwen3.6 35B-A3B,"layer, -ncmoe 24",q5_0,q5_0,3,13.0,255.4,7.5,Fits,
+Qwen3.6 35B-A3B,"layer, -ncmoe 24",q8_0,q4_0,3,13.1,257.7,7.5,Fits,
+Qwen3.6 35B-A3B,"layer, -ncmoe 24",q4_0,q4_0,3,13.1,256.7,7.5,Fits,
+Qwen3.6 35B-A3B,"layer, -ncmoe 22",q4_0,q4_0,,,,,No fit,Out of memory at 65K context
+Qwen3.6 35B-A3B,"layer, -ncmoe 20",q4_0,q4_0,,,,,No fit,Out of memory at 65K context

@@ -1,0 +1,170 @@
+model,config,engine,decode_tok_s,prefill_tok_s,decode_at_30k_tok_s,code_rewrite_tok_s,peak_vram_gb,status,note,source
+Gemma 4 26B-A4B QAT,stock layer (default),llama.cpp,28.85,357.2,23.98,26.38,7.0,ok,,server test
+Ornith 1.5 9B,stock layer (default),llama.cpp,29.11,794.7,27.01,28.74,4.2,ok,,server test
+Gemma 4 26B-A4B QAT,"tensor, q8 KV, ub256 (production)",llama.cpp,46.85,616.7,39.54,45.86,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,"tensor, ub128",llama.cpp,46.91,468.2,39.54,45.69,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,tensor + ctx checkpoints / cache-reuse,llama.cpp,46.45,607.7,39.64,45.47,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,tensor + ngram-mod speculation,llama.cpp,162.3,607.0,39.71,92.61,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,tensor + ngram-map-k speculation,llama.cpp,111.26,607.5,39.37,108.11,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,"tensor, tensor-split skew",llama.cpp,47.07,569.1,37.22,44.46,7.8,ok,,server test
+Ornith 1.5 9B,"tensor, f16 KV, ub512 (production)",llama.cpp,44.63,751.7,40.14,43.06,3.7,ok,,server test
+Ornith 1.5 9B,"tensor, ub1024",llama.cpp,44.45,742.5,40.42,42.99,3.8,ok,,server test
+Ornith 1.5 9B,tensor + ngram-mod,llama.cpp,44.66,739.3,40.13,40.01,3.7,ok,,server test
+Ornith 1.5 9B,tensor + ngram-map-k,llama.cpp,44.64,741.5,39.76,39.45,3.7,ok,,server test
+Ornith 1.5 9B,tensor + draft-mtp,llama.cpp,54.39,678.0,48.11,60.89,4.1,ok,,server test
+Gemma 4 26B-A4B QAT,"layer, 32K ctx",llama.cpp,45.66,837.6,33.55,39.83,7.5,ok,,server test
+Gemma 4 26B-A4B QAT,"layer + MTP, 32K ctx",llama.cpp,70.5,728.4,43.25,61.56,7.6,ok,,server test
+Gemma 4 26B-A4B QAT,"layer + MTP, 24K ctx",llama.cpp,70.48,727.1,43.14,61.51,7.5,ok,,server test
+Gemma 4 26B-A4B QAT,"layer split, 65K",llama.cpp,46.32,846.0,33.72,39.78,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,"layer + MTP, 65K",llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 26B-A4B QAT,"layer + MTP, 65K, split tweak",llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 26B-A4B QAT,"layer + MTP, 65K, ub128",llama.cpp,,,,,7.9,failed,RemoteDisconnected('Remote end closed connection without res,server test
+Gemma 4 26B-A4B QAT,tensor + MTP draft on GPU,llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 26B-A4B QAT,tensor + MTP draft on CPU,llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 26B-A4B QAT,"tensor + MTP GPU, ub128",llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 26B-A4B QAT,tensor + simple draft,llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 26B-A4B QAT,"layer + MTP, 65K, split 47/53",llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 26B-A4B QAT,"layer + MTP, 65K, split 44/56",llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 26B-A4B QAT,"layer + MTP, 65K, draft on GPU1",llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 26B-A4B QAT,"layer + MTP, 49K ctx",llama.cpp,70.7,733.2,42.62,61.47,7.9,ok,,server test
+Ornith 1.5 35B-A3B,stock,llama.cpp,19.91,261.4,18.61,19.94,6.9,ok,,server test
+Ornith 1.5 35B-A3B,layer-ncmoe30,llama.cpp,16.95,192.8,16.37,17.2,6.4,ok,,server test
+Ornith 1.5 35B-A3B,layer-ncmoe30-mtp,llama.cpp,18.7,204.2,25.59,22.04,7.3,ok,,server test
+Ornith 1.5 35B-A3B,layer-ncmoe28,llama.cpp,16.91,202.5,15.59,17.11,7.1,ok,,server test
+Gemma 4 12B QAT,stock,llama.cpp,23.17,402.7,17.94,20.57,5.2,ok,,server test
+Gemma 4 12B QAT,layer-f16,llama.cpp,22.98,451.9,19.63,21.31,4.8,ok,,server test
+Gemma 4 12B QAT,layer-q8_0,llama.cpp,22.01,443.5,17.68,19.76,4.5,ok,,server test
+Gemma 4 12B QAT,layer-f16-mtp,llama.cpp,55.34,372.0,38.56,45.43,5.2,ok,,server test
+Gemma 4 12B QAT,tensor-f16,llama.cpp,,,,,4.6,failed,RemoteDisconnected('Remote end closed connection without res,server test
+Gemma 4 12B QAT,tensor-q8_0,llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 12B QAT,tensor-f16-mtp,llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 12B QAT,single-f16,llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 12B QAT,single-q8_0,llama.cpp,21.77,269.8,17.79,19.11,7.6,ok,,server test
+Gemma 4 12B QAT,single-f16-mtp,llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 E4B QAT,stock,llama.cpp,44.05,1052.5,37.49,41.13,2.7,ok,,server test
+Gemma 4 E4B QAT,layer-f16,llama.cpp,43.75,1159.3,38.74,42.14,2.6,ok,,server test
+Gemma 4 E4B QAT,layer-q8_0,llama.cpp,41.08,1146.2,31.9,38.22,2.5,ok,,server test
+Gemma 4 E4B QAT,layer-f16-mtp,llama.cpp,51.04,963.6,61.76,93.92,2.7,ok,,server test
+Gemma 4 E4B QAT,tensor-f16,llama.cpp,48.88,986.2,46.01,50.11,2.5,ok,,server test
+Gemma 4 E4B QAT,tensor-q8_0,llama.cpp,46.97,969.2,38.78,45.24,2.5,ok,,server test
+Gemma 4 E4B QAT,tensor-f16-mtp,llama.cpp,,,,,2.7,failed,RemoteDisconnected('Remote end closed connection without res,server test
+Gemma 4 E4B QAT,single-f16,llama.cpp,44.4,700.3,38.76,41.47,4.1,ok,,server test
+Gemma 4 E4B QAT,single-q8_0,llama.cpp,41.46,692.2,31.96,37.86,3.8,ok,,server test
+Gemma 4 E4B QAT,single-f16-mtp,llama.cpp,53.19,682.8,67.02,102.46,4.2,ok,,server test
+Qwen3.5 9B,stock,llama.cpp,27.58,784.5,25.6,27.17,4.4,ok,,server test
+Qwen3.5 9B,layer-f16,llama.cpp,27.53,778.5,25.61,26.97,4.3,ok,,server test
+Qwen3.5 9B,layer-q8_0,llama.cpp,27.29,773.4,23.72,26.22,4.1,ok,,server test
+Qwen3.5 9B,layer-f16-mtp,llama.cpp,34.41,627.9,31.77,45.17,5.2,ok,,server test
+Qwen3.5 9B,tensor-f16,llama.cpp,42.91,744.5,38.42,41.16,3.8,ok,,server test
+Qwen3.5 9B,tensor-q8_0,llama.cpp,41.87,734.8,36.44,39.73,3.6,ok,,server test
+Qwen3.5 9B,tensor-f16-mtp,llama.cpp,54.63,681.1,43.76,65.75,4.3,ok,,server test
+Qwen3.5 9B,single-f16,llama.cpp,27.27,438.3,25.06,26.28,7.4,ok,,server test
+Qwen3.5 9B,single-q8_0,llama.cpp,27.03,446.4,23.08,25.46,6.6,ok,,server test
+Qwen3.5 9B,single-f16-mtp,llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 12B QAT,layer-f16+ub256,llama.cpp,23.11,501.8,19.77,21.56,4.5,ok,,server test
+Gemma 4 12B QAT,layer-f16+ub1024,llama.cpp,22.91,401.6,19.42,21.02,5.3,ok,,server test
+Gemma 4 12B QAT,layer-f16+queues,llama.cpp,22.91,448.4,19.47,21.31,4.8,ok,,server test
+Gemma 4 12B QAT,layer-f16+gopt,llama.cpp,22.92,447.5,19.68,21.27,4.8,ok,,server test
+Gemma 4 12B QAT,layer-f16+nograph,llama.cpp,22.91,447.8,19.61,21.2,4.8,ok,,server test
+Gemma 4 12B QAT,layer-f16+thr6,llama.cpp,22.9,448.4,19.69,21.33,4.8,ok,,server test
+Gemma 4 12B QAT,layer-f16+thr4,llama.cpp,22.88,447.6,19.73,21.26,4.8,ok,,server test
+Gemma 4 12B QAT,layer-f16+nommap,llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 12B QAT,layer-f16+ts4555,llama.cpp,22.92,433.1,19.58,21.19,5.1,ok,,server test
+Gemma 4 12B QAT,layer-f16+ts5545,llama.cpp,22.97,430.5,19.53,21.39,4.6,ok,,server test
+Gemma 4 12B QAT,layer-f16-mtp+ub256,llama.cpp,55.35,439.5,34.75,45.06,4.8,ok,,server test
+Gemma 4 12B QAT,layer-f16-mtp+ub1024,llama.cpp,55.33,356.8,36.94,42.75,6.0,ok,,server test
+Gemma 4 12B QAT,layer-f16-mtp+queues,llama.cpp,55.5,373.6,39.02,45.52,5.2,ok,,server test
+Gemma 4 12B QAT,layer-f16-mtp+gopt,llama.cpp,55.43,373.3,38.65,45.26,5.2,ok,,server test
+Gemma 4 12B QAT,layer-f16-mtp+nograph,llama.cpp,55.54,373.5,39.39,45.5,5.2,ok,,server test
+Gemma 4 12B QAT,layer-f16-mtp+thr6,llama.cpp,55.87,372.8,39.17,45.76,5.2,ok,,server test
+Gemma 4 12B QAT,layer-f16-mtp+thr4,llama.cpp,55.96,372.6,39.0,45.45,5.2,ok,,server test
+Gemma 4 12B QAT,layer-f16-mtp+nommap,llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 12B QAT,layer-f16-mtp+ts4555,llama.cpp,55.28,368.6,38.94,45.64,5.6,ok,,server test
+Gemma 4 12B QAT,layer-f16-mtp+ts5545,llama.cpp,55.4,364.3,38.83,45.39,5.0,ok,,server test
+Gemma 4 12B QAT,layer-f16-mtp+draft2,llama.cpp,48.85,373.4,35.01,41.26,5.2,ok,,server test
+Gemma 4 12B QAT,layer-f16-mtp+draft5,llama.cpp,62.12,373.2,42.97,46.42,5.2,ok,,server test
+Gemma 4 12B QAT,layer-f16-mtp+draft8,llama.cpp,71.43,373.5,43.49,54.7,5.2,ok,,server test
+Gemma 4 E4B QAT,tensor-f16+ub256,llama.cpp,51.5,934.3,45.26,50.13,2.4,ok,,server test
+Gemma 4 E4B QAT,tensor-f16+ub1024,llama.cpp,51.33,1014.4,45.1,49.18,2.7,ok,,server test
+Gemma 4 E4B QAT,tensor-f16+queues,llama.cpp,51.53,984.5,45.82,49.74,2.5,ok,,server test
+Gemma 4 E4B QAT,tensor-f16+gopt,llama.cpp,50.56,979.6,44.6,49.8,2.5,ok,,server test
+Gemma 4 E4B QAT,tensor-f16+nograph,llama.cpp,51.04,982.5,46.09,50.09,2.5,ok,,server test
+Gemma 4 E4B QAT,tensor-f16+thr6,llama.cpp,50.64,981.4,45.66,49.51,2.5,ok,,server test
+Gemma 4 E4B QAT,tensor-f16+thr4,llama.cpp,50.86,982.3,45.54,49.94,2.5,ok,,server test
+Gemma 4 E4B QAT,tensor-f16+nommap,llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 E4B QAT,tensor-f16+ar-internal,llama.cpp,51.51,989.1,46.45,50.12,2.5,ok,,server test
+Gemma 4 E4B QAT,tensor-f16+ar-none,llama.cpp,51.16,984.2,45.89,50.15,2.5,ok,,server test
+Gemma 4 E4B QAT,single-f16-mtp+ub256,llama.cpp,52.8,689.1,54.45,100.35,4.1,ok,,server test
+Gemma 4 E4B QAT,single-f16-mtp+ub1024,llama.cpp,52.84,681.2,72.12,99.42,4.5,ok,,server test
+Gemma 4 E4B QAT,single-f16-mtp+queues,llama.cpp,52.8,684.0,66.05,101.32,4.2,ok,,server test
+Gemma 4 E4B QAT,single-f16-mtp+gopt,llama.cpp,53.0,684.3,66.96,102.53,4.2,ok,,server test
+Gemma 4 E4B QAT,single-f16-mtp+nograph,llama.cpp,52.73,684.2,67.53,101.86,4.2,ok,,server test
+Gemma 4 E4B QAT,single-f16-mtp+thr6,llama.cpp,52.59,683.7,66.27,102.54,4.2,ok,,server test
+Gemma 4 E4B QAT,single-f16-mtp+thr4,llama.cpp,52.85,683.7,66.49,102.57,4.2,ok,,server test
+Gemma 4 E4B QAT,single-f16-mtp+nommap,llama.cpp,,,,,,failed,server exited during load,server test
+Gemma 4 E4B QAT,single-f16-mtp+draft2,llama.cpp,59.89,686.7,66.89,91.47,4.2,ok,,server test
+Gemma 4 E4B QAT,single-f16-mtp+draft5,llama.cpp,45.89,683.6,61.37,120.39,4.2,ok,,server test
+Gemma 4 E4B QAT,single-f16-mtp+draft8,llama.cpp,37.81,684.3,76.27,139.21,4.2,ok,,server test
+Qwen3.5 9B,tensor-f16+ub256,llama.cpp,42.73,718.4,38.98,41.61,3.7,ok,,server test
+Qwen3.5 9B,tensor-f16+ub1024,llama.cpp,42.77,757.5,38.87,41.19,4.0,ok,,server test
+Qwen3.5 9B,tensor-f16+queues,llama.cpp,42.61,741.8,38.88,41.16,3.8,ok,,server test
+Qwen3.5 9B,tensor-f16+gopt,llama.cpp,42.68,736.4,37.92,41.28,3.8,ok,,server test
+Qwen3.5 9B,tensor-f16+nograph,llama.cpp,42.67,725.1,39.03,41.12,3.8,ok,,server test
+Qwen3.5 9B,tensor-f16+thr6,llama.cpp,42.68,739.8,38.0,41.0,3.8,ok,,server test
+Qwen3.5 9B,tensor-f16+thr4,llama.cpp,42.68,740.3,38.86,41.27,3.8,ok,,server test
+Qwen3.5 9B,tensor-f16+nommap,llama.cpp,,,,,,failed,server exited during load,server test
+Qwen3.5 9B,tensor-f16+ar-internal,llama.cpp,42.76,750.4,38.79,41.39,3.8,ok,,server test
+Qwen3.5 9B,tensor-f16+ar-none,llama.cpp,42.64,736.1,38.46,41.24,3.8,ok,,server test
+Qwen3.5 9B,tensor-f16-mtp+ub256,llama.cpp,54.97,644.4,53.96,64.32,4.1,ok,,server test
+Qwen3.5 9B,tensor-f16-mtp+ub1024,llama.cpp,53.89,683.9,44.2,63.69,4.6,ok,,server test
+Qwen3.5 9B,tensor-f16-mtp+queues,llama.cpp,54.01,677.5,44.29,65.64,4.3,ok,,server test
+Qwen3.5 9B,tensor-f16-mtp+gopt,llama.cpp,54.37,679.7,42.9,65.27,4.3,ok,,server test
+Qwen3.5 9B,tensor-f16-mtp+nograph,llama.cpp,54.7,673.3,44.59,65.58,4.3,ok,,server test
+Qwen3.5 9B,tensor-f16-mtp+thr6,llama.cpp,54.8,681.4,43.15,64.9,4.3,ok,,server test
+Qwen3.5 9B,tensor-f16-mtp+thr4,llama.cpp,54.66,678.6,44.26,66.11,4.3,ok,,server test
+Qwen3.5 9B,tensor-f16-mtp+nommap,llama.cpp,,,,,,failed,server exited during load,server test
+Qwen3.5 9B,tensor-f16-mtp+ar-internal,llama.cpp,54.94,683.3,43.11,64.74,4.3,ok,,server test
+Qwen3.5 9B,tensor-f16-mtp+ar-none,llama.cpp,54.6,679.0,44.4,65.92,4.3,ok,,server test
+Qwen3.5 9B,tensor-f16-mtp+draft2,llama.cpp,53.46,682.1,48.02,65.24,4.2,ok,,server test
+Qwen3.5 9B,tensor-f16-mtp+draft5,llama.cpp,38.85,671.6,40.26,61.78,4.3,ok,,server test
+Qwen3.5 9B,tensor-f16-mtp+draft8,llama.cpp,29.83,663.4,26.58,61.31,4.4,ok,,server test
+Gemma 4 12B QAT,layer-f16-mtp+combo,llama.cpp,71.09,370.8,44.01,54.75,5.2,ok,,server test
+Gemma 4 E4B QAT,tensor-f16+combo,llama.cpp,51.75,988.2,45.57,50.03,2.5,ok,,server test
+Gemma 4 E4B QAT,single-f16-mtp+combo,llama.cpp,59.38,682.3,64.98,87.68,4.5,ok,,server test
+Qwen3.5 9B,tensor-f16-mtp+combo,llama.cpp,53.67,654.6,47.95,62.6,4.1,ok,,server test
+Gemma 4 26B-A4B QAT,PolyStrata MTP default,PolyStrata,24.4,657.7,23.5,25.7,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,PolyStrata MTP default-densef32,PolyStrata,23.7,693.6,22.2,26.9,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,PolyStrata v0-default,PolyStrata,24.9,701.3,22.7,27.6,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,PolyStrata v2-overlap,PolyStrata,24.5,695.7,23.8,27.0,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,PolyStrata v3-reserve300,PolyStrata,23.9,692.6,23.2,27.4,7.7,ok,,server test
+Gemma 4 26B-A4B QAT,PolyStrata v4-trim15,PolyStrata,24.0,693.8,24.8,26.6,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,PolyStrata w1-window4,PolyStrata,24.2,694.9,21.9,27.4,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,PolyStrata w3-lookup0,PolyStrata,24.3,693.8,23.6,27.6,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,PolyStrata w4-nodraft,PolyStrata,23.9,694.1,22.3,22.7,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,PolyStrata w5-kvint8,PolyStrata,24.3,711.4,20.3,26.6,7.8,ok,,server test
+Gemma 4 26B-A4B QAT,PolyStrata w6-lookup6,PolyStrata,23.6,692.4,22.1,27.3,7.8,ok,,server test
+Ornith 1.5 35B-A3B APEX,PolyStrata v0-default,PolyStrata,29.8,639.0,28.7,32.4,7.9,ok,,server test
+Ornith 1.5 35B-A3B APEX,PolyStrata v1-nodraft,PolyStrata,29.5,654.8,26.1,,7.8,ok,,server test
+Ornith 1.5 35B-A3B APEX,PolyStrata v2-kvq8,PolyStrata,29.2,650.4,27.5,31.4,7.8,ok,,server test
+Ornith 1.5 35B-A3B APEX,PolyStrata v3-window4,PolyStrata,29.4,650.1,28.5,31.9,7.8,ok,,server test
+Ornith 1.5 35B-A3B APEX,PolyStrata v4-reserve1200,PolyStrata,30.0,640.6,26.8,32.3,7.0,ok,,server test
+Ornith 1.5 35B-A3B APEX,PolyStrata v5-nographs,PolyStrata,29.1,651.4,26.7,31.7,7.8,ok,,server test
+Ornith 1.5 35B-A3B APEX,PolyStrata v6-reserve1200-nodraft,PolyStrata,29.9,639.4,26.6,32.6,6.9,ok,,server test
+Qwen2.5 7B,"Q4_K_M, 1 GPU",llama.cpp,34.5,615,,,,ok,deleted after test,llama-bench (notes)
+Qwen2.5 14B,"Q4_K_M, layer",llama.cpp,17.9,280,,,,ok,deleted after test,llama-bench (notes)
+Gemma 4 12B,"Q4_K_M, layer",llama.cpp,21.3,328,,,,ok,,llama-bench (notes)
+Gemma 4 26B-A4B,"UD-IQ4_XS, layer",llama.cpp,38.8,676,,,,ok,deleted after test,llama-bench (notes)
+Gemma 4 26B-A4B QAT,"layer, llama-bench",llama.cpp,50.8,730,,,,ok,,llama-bench (notes)
+Gemma 4 26B-A4B QAT,"tensor, llama-bench",llama.cpp,55.1,972,,,,ok,,llama-bench (notes)
+Qwen3.8 27B,"IQ4_XS, layer, q8 KV",llama.cpp,9.95,162,,,,ok,,llama-bench (notes)
+Qwen3.8 27B,"IQ4_XS, stock tensor, 4.3K prompt",llama.cpp,15.69,241,,,,ok,,llama-bench (notes)
+Qwen3.8 27B,"IQ4_XS, PXA fork best",llama.cpp,12.59,221,,,,ok,"PXA fork, slower than stock tensor",llama-bench (notes)
+Qwen3.6 35B-A3B,"IQ4_XS, -ncmoe 28",llama.cpp,12.5,296,,,,ok,,llama-bench (notes)
+Ornith 1.5 9B,"layer, llama-bench",llama.cpp,29.8,,,,,ok,,llama-bench (notes)
+Ornith 1.5 9B,"tensor, llama-bench",llama.cpp,46.5,,,,,ok,,llama-bench (notes)
+Ornith 1.5 35B-A3B,"Q4_K_M, -ncmoe 30, llama-bench",llama.cpp,17.6,247,,,,ok,,llama-bench (notes)
+Qwen3.5 27B,"IQ4_XS, tensor, q8 KV, ub256, 32K ctx",llama.cpp,18.1,242.6,,,7.5,ok,prefill on a 9.7K-token prompt,server test
+Qwen3.8 27B,"IQ4_XS, tensor, q8 KV, ub256, 32K ctx (same harness)",llama.cpp,16.3,233.8,,,7.1,ok,prefill on a 9.7K-token prompt,server test
+Qwen3.6 35B-A3B,"IQ4_XS, layer, -ncmoe 32, q8 KV, 65K ctx",llama.cpp,11.1,273.6,,,4.8,ok,prefill on a 9.7K-token prompt,server test
+Qwen3.6 35B-A3B,"IQ4_XS, layer, -ncmoe 28, q8 KV, 65K ctx",llama.cpp,12.0,291.2,,,6.2,ok,prefill on a 9.7K-token prompt,server test
+Qwen3.6 35B-A3B,"IQ4_XS, layer, -ncmoe 24, q8 KV, 65K ctx",llama.cpp,13.2,316.0,,,7.6,ok,prefill on a 9.7K-token prompt; fastest that fits,server test

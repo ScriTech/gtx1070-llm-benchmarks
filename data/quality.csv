@@ -1,0 +1,18 @@
+model,config,engine,retrieval_of_3,agent_fault_of_6,agent_healthy_of_4,triage_of_12,extract_of_5,code_of_42,total_of_72,score_pct,verdict,decode_tok_s,code_test_seconds
+Gemma 4 12B QAT,"layer, f16 KV, MTP draft 8",llama.cpp,3,6,4,10,5,42,70,97.2,Pass,71.43,721.1
+Gemma 4 12B QAT,"layer, f16 KV",llama.cpp,3,6,4,11,5,41,70,97.2,Pass,22.98,851.1
+Gemma 4 E4B QAT,"1 GPU, f16 KV, MTP, ub1024",llama.cpp,3,6,4,11,5,40,69,95.8,Pass,52.84,148.9
+Gemma 4 E4B QAT,"tensor, f16 KV",llama.cpp,3,6,4,12,5,38,68,94.4,Pass,48.88,224.0
+Qwen3.5 9B,"tensor, f16 KV",llama.cpp,3,5,4,10,5,13,40,55.6,Fail,42.91,3821.4
+Qwen3.5 9B,"tensor, f16 KV, MTP, ub256",llama.cpp,3,5,4,10,5,0,27,37.5,Fail,54.97,3101.6
+Ornith 1.5 35B-A3B,"layer, -ncmoe 30, f16 KV",llama.cpp,3,6,4,12,5,41,71,98.6,Pass,16.95,976.2
+Ornith 1.5 35B-A3B,"layer, -ncmoe 30, f16 KV, MTP",llama.cpp,3,6,4,12,5,41,71,98.6,Pass,18.7,1681.3
+Gemma 4 26B-A4B QAT,"PolyStrata, MTP",PolyStrata,2,6,4,10,5,42,69,95.8,Pass,24.4,565.0
+Ornith 1.5 35B-A3B APEX,"PolyStrata, reserve 1200 MiB",PolyStrata,3,6,4,12,5,42,72,100.0,Pass,30.0,520.8
+Gemma 4 26B-A4B QAT,"tensor, q8 KV, ub256",llama.cpp,,,,,,42,71,98.6,Pass,46.85,460.6
+Gemma 4 26B-A4B QAT,"tensor, q8 KV + ngram-map-k",llama.cpp,,,,,,42,72,100.0,Pass,46.85,459.2
+Ornith 1.5 9B,"tensor, f16 KV, ub512",llama.cpp,,,,,,41,69,95.8,Pass,45.13,1157.1
+Ornith 1.5 9B,"tensor, f16 KV + draft-mtp",llama.cpp,,,,,,40,69,95.8,Pass,54.83,1100.2
+Qwen3.8 27B,"tensor, q8 KV, ub256",llama.cpp,,,,,,42,71,98.6,Pass,15.69,2336.3
+Qwen3.5 27B,"tensor, q4 KV, ub256",llama.cpp,3,6,4,10,5,42,70,97.2,Pass,18.1,279.1
+Qwen3.6 35B-A3B,"layer, -ncmoe 24, q8 KV",llama.cpp,3,6,4,12,5,42,72,100.0,Pass,13.2,2992.1
