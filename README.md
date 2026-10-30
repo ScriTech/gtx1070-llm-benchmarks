@@ -73,7 +73,7 @@ Weights are GGUF files from Hugging Face. We ran llama.cpp directly and did not 
 | Ornith 1.5 9B | `Ornith-1.5-9B-Q4_K_M.gguf` | [ornith-ai/Ornith-1.5-9B-GGUF](https://huggingface.co/ornith-ai/Ornith-1.5-9B-GGUF) |
 | Ornith 1.5 35B-A3B APEX | `Ornith-1.5-35B-A3B-APEX-MTP-I-Compact.gguf` | [mudler/Ornith-1.5-35B-A3B-APEX-MTP-GGUF](https://huggingface.co/mudler/Ornith-1.5-35B-A3B-APEX-MTP-GGUF) |
 
-Engines: [llama.cpp](https://github.com/ggml-org/llama.cpp) (upstream, commit `d05706b4f`) and [PolyStrata](https://github.com/VecSzn/PolyStrata) (MIT licensed, built on [Strata](https://github.com/Niko1221/Strata)). The PolyStrata Gemma 26B run also used the MTP drafter that PolyStrata ships with.
+Engines: [llama.cpp](https://github.com/ggml-org/llama.cpp) (upstream, commit `d05706b4f`) and [PolyStrata](https://github.com/VecSzn/PolyStrata) (MIT licensed, built on [Strata](https://github.com/Niko1221/Strata)). The PolyStrata Gemma 26B run also used the MTP drafter that PolyStrata ships with. We also benchmarked the [PXA](https://github.com/poisonxa16/pxa) llama.cpp fork; see Credits.
 
 ## Quality results
 
@@ -156,6 +156,25 @@ Both of the models below were tested at 65K context. K and V are the key and val
 - Speeds are short single-request measurements, not throughput under load.
 - Thinking was on and uncapped, which favours models that reason carefully and punishes ones that loop.
 - Where we tested only part of a configuration it says so in the table.
+
+## Credits
+
+None of this would exist without other people's open-source work. Thank you to:
+
+| Project | Author | What it gave us |
+|---|---|---|
+| [llama.cpp](https://github.com/ggml-org/llama.cpp) | Georgi Gerganov and the ggml-org contributors | The inference engine behind almost every result here (MIT). |
+| [PolyStrata](https://github.com/VecSzn/PolyStrata) | VecSzn and the PolyStrata contributors | The engine for the Ornith 35B APEX rows and the PolyStrata Gemma 26B row (MIT). |
+| [Strata](https://github.com/Niko1221/Strata) | Niko1221 and the Strata contributors | The runtime PolyStrata is built on (MIT). |
+| [PXA](https://github.com/poisonxa16/pxa) | poisonxa16 | A llama.cpp fork with extra CUDA kernels that we built and benchmarked on these cards (MIT). On the 27B model we compared, stock llama.cpp with `-sm tensor` was faster (15.7 against 12.6 tok/s), so PXA is not behind any headline result, but its tests shaped how we compared engines. |
+| [Unsloth](https://huggingface.co/unsloth) | Unsloth AI | Quantized GGUF builds of the Gemma and Qwen models. |
+| [magnitudedev](https://huggingface.co/magnitudedev) | magnitudedev | The MTP draft models for Gemma 4 12B and E4B. |
+| [mudler](https://huggingface.co/mudler) | mudler | The APEX quantization of Ornith 1.5 35B-A3B. |
+| [ornith-ai](https://huggingface.co/ornith-ai) | ornith-ai | The Ornith 1.5 models and GGUFs. |
+| [Google](https://huggingface.co/google) | Google | The Gemma 4 models and their QAT builds. |
+| [Qwen](https://huggingface.co/Qwen) | The Qwen team | The Qwen3.5, Qwen3.6 and Qwen3.8 models. |
+
+The models and engines keep their own licenses. If we have missed anyone who should be credited, please open an issue and we will add you.
 
 ## Files
 
